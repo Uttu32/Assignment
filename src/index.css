@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.red {
+  border: 1px solid red;
+}
+
+.green {
+  border: 1px solid green;
+}
+
+.boxShadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.boxShadowOne {
+  box-shadow: rgba(17, 17, 26, 0.4) 10px 0px 16px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
