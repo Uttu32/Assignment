@@ -21,7 +21,7 @@ const steps = [
 
 export default function StepperComp() {
     return (
-        <Box sx={{ width: '100%' }} className="p-4 pb-0">
+        <Box sx={{ width: '100%' }} className="p-4 pb-0 overflow-x-scroll">
             <Stepper activeStep={11} alternativeLabel>
                 {steps.map((label, i) => (
                     <Step key={label}>

@@ -10,11 +10,11 @@ function LandingPage() {
       <div className='h-[8.5vh]'>
         <Header />
       </div>
-      <div className='flex h-[91.5vh]'>
-        <div className='w-1/5 h-[100%]'>
+      <div className='flex flex-col h-[91.5vh] lg:flex-row'>
+        <div className='w-full lg:w-1/5 h-[100%]'>
           <SideBar />
         </div>
-        <div className='w-4/5'>
+        <div className='w-full lg:w-4/5'>
           <MainSection />
         </div>
       </div>
