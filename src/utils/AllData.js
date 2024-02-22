@@ -1,5 +1,3 @@
-
-
 export const profileImageUrl =
   "https://res.cloudinary.com/demo/image/twitter_name/BillClinton.jpg";
 

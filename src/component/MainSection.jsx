@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TopCard from './TopCard';
 import StepperComp from './Stepper';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
@@ -31,7 +31,6 @@ function MainSection() {
     const [inputValue, setInputValue] = useState("");
     const [open, setOpen] = React.useState(false);
     const [isAllRemarkVisible, setIsAllRemarkvisible] = useState(false);
-
     const [RemarkData, setRemarkData] = useState([
         {
             id: uuid(),
@@ -48,6 +47,7 @@ function MainSection() {
             isEditEnable: false,
         },
     ])
+
     const [currentData, setCurrentData] = useState(null);
 
     const handleOpen = (id) => {
@@ -446,13 +446,6 @@ function MainSection() {
 
 
                         <div className='flex gap-2 mr-16'>
-                            {/* <Button variant="outlined" sx={{
-                                width: '12rem',
-                                fontWeight: "600",
-                                height: '2.75rem'
-                            }}>
-                                UPDATE
-                            </Button> */}
                             <Button
                                 variant="contained"
                                 color="success"
