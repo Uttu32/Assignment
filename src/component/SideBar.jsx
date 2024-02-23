@@ -59,8 +59,8 @@ function SideBar() {
                         <div
                             key={id}
                             onClick={() => setSideBarSelected(ele.name)}
-                            className={'px-3 cursor-pointer py-2 flex items-center gap-3 ' + (sideBarSelected === ele.name ? "bg-blue-600 text-white" 
-                            : "text-gray-600")}
+                            className={'px-3 pl-[30%] lg:pl-3 cursor-pointer py-2 flex items-center gap-3 ' + (sideBarSelected === ele.name ? "bg-blue-600 text-white"
+                                : "text-gray-600")}
                         >
                             <img className='w-6 h-6' src={ele.logo} alt="" />
                             <h1 className="text-md font-semibold ">

@@ -135,15 +135,17 @@ function MainSection() {
             <TopCard />
             <section className='pt-8 boxShadow flex flex-col gap-6 '>
                 <StepperComp />
+
+                {/* Advance Tariff section  */}
                 <div className='p-4 py-0 flex items-start justify-between'>
                     <div className='w-[95%] flex flex-col justify-center items-center gap-4'>
-                        <h1 className='text-3xl text-blue-500'>Advance tariff</h1>
-                        <div className="flex pb-2">
+                        <h1 className='text-lg font-bold lg:font-medium lg:text-3xl text-blue-500'>Advance tariff</h1>
+                        <div className="flex pb-0 w-full items-center justify-center overflow-x-scroll pl-28 lg:pl-0 sm:pl-0 lg:pb-2 sm:px-0 lg:px-0">
                             {
                                 AdvanceTariffData.map((item, i) => {
                                     return (
-                                        <p
-                                            className={' text-center cursor-pointer px-6 ' +
+                                        <p onClick={() => setSelected(item)}
+                                            className={'text-start lg:text-center text-xs lg:text-lg lg:px-6 cursor-pointer px-1 sm:px-3 ' +
                                                 (i === AdvanceTariffData.length - 1 ? "border-r-2 " : "")
                                                 +
                                                 (selected === item ?
@@ -160,43 +162,44 @@ function MainSection() {
                             }
                         </div>
                     </div>
-                    <p className="border border-blue-400 rounded-full w-8 h-8 flex items-center justify-center mt-3">
+                    <p className="border border-blue-400 rounded-full w-6 h-6 lg:w-8 lg:h-8 flex items-center justify-center mt-1 lg:mt-3">
                         <MoreVertOutlinedIcon sx={{ color: 'blue' }} />
                     </p>
 
                 </div>
 
-                <div className='p-4 py-0'>
-                    <table className="table w-full">
-                        <thead>
+                {/* Main Table  */}
+                <div className='p-4 py-0 overflow-x-scroll'>
+                    <table className="table w-[75.5rem]">
+                        <thead >
                             <tr>
-                                <th className="p-4 px-1 pb-0 w-fit border space-y-2 bg-[#525659] border-white text-white">
-                                    <p className='text-sm'>S. No.</p>
-                                    <input type="text" className="w-[92%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
+                                <th className="lg:p-4 p-1 lg:px-1 pb-0 w-fit border sm:space-y-2 bg-[#525659] border-white text-white">
+                                    <p className='text-xs sm:text-sm'>S. No.</p>
+                                    <input type="text" className="hidden sm:block w-[92%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
                                 </th>
-                                <th className="p-4 px-1 pb-0 space-y-2 border bg-[#525659] text-white border-white">
-                                    <p className='w-full text-[0.8rem]'>CZ Catlog Master Id</p>
-                                    <input type="text" className="w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
+                                <th className="lg:p-4 p-1 lg:px-1 pb-0 w-fit border sm:space-y-2 bg-[#525659] border-white text-white">
+                                    <p className='w-full text-xs lg:text-[0.8rem]'>CZ Catlog Master Id</p>
+                                    <input type="text" className="hidden sm:block w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
                                 </th>
-                                <th className="p-4 px-1 pb-4 space-y-2 border bg-[#525659] text-white border-white">
-                                    <p className='text-[0.8rem]'>HCP Catalog Id <br /> (External Id)</p>
-                                    <input type="text" className="w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
+                                <th className="lg:p-4 p-1 lg:px-1 pb-0 w-fit border sm:space-y-2 bg-[#525659] border-white text-white">
+                                    <p className='text-xs lg:text-[0.8rem]'>HCP Catalog Id <br /> (External Id)</p>
+                                    <input type="text" className="hidden sm:block w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
                                 </th>
-                                <th className="p-4 px-1 pb-0 space-y-2 border bg-[#525659] text-white border-white w-fit">
-                                    <p className='text-[0.8rem]'>Item Category</p>
-                                    <input type="text" className="w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
+                                <th className="lg:p-4 p-1 lg:px-1 pb-0 w-fit border sm:space-y-2 bg-[#525659] border-white text-white">
+                                    <p className='text-xs lg:text-[0.8rem]'>Item Category</p>
+                                    <input type="text" className="hidden sm:block w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
                                 </th>
-                                <th className="p-4 px-1 pb-0 space-y-2 border bg-[#525659] text-white border-white w-fit">
-                                    <p className='text-[0.8rem]'>Item Title</p>
-                                    <input type="text" className="w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
+                                <th className="lg:p-4 p-1 lg:px-1 pb-0 w-fit border sm:space-y-2 bg-[#525659] border-white text-white">
+                                    <p className='text-xs lg:text-[0.8rem]'>Item Title</p>
+                                    <input type="text" className="hidden sm:block w-[96%] text-gray-700 rounded-md border border-gray-200 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search" />
                                 </th>
-                                <th className="pt-8 px-0 pb-0 border  bg-[#525659] text-white border-white w-fit space-y-0">
-                                    <p className='border border-white border-r-0 border-l-0 py-2'>
+                                <th className="p-4 px-0 pb-0 border bg-[#525659] border-white text-white w-[7rem] lg:w-[14rem]">
+                                    <p className='border text-xs lg:text-[1rem] border-white border-r-0 border-l-0 py-4'>
                                         Deluxe/Single Room Ac
                                     </p>
-                                    <div className="text-right flex justify-between px-4">
-                                        <h4 className='w-[50%] pb-4 text-center border border-gray-200 border-l-0 border-b-0 border-t-0 py-1 pt-3'>Rack Rate</h4>
-                                        <h4 className='w-[50%] pb-4 text-center py-1 pt-3'>Offered Rate</h4>
+                                    <div className=" text-right flex justify-between px-4">
+                                        <h4 className='w-[50%] pb-4 text-xs lg:text-[1rem] text-center border border-gray-200 border-l-0 border-b-0 border-t-0 py-1 pt-3'>Rack Rate</h4>
+                                        <h4 className='w-[50%] pb-4 text-xs lg:text-[1rem] text-center py-1 pt-3'>Offered Rate</h4>
                                     </div>
                                 </th>
                             </tr>
@@ -204,14 +207,14 @@ function MainSection() {
                         <tbody>
                             {tableData?.map((item, i) => (
                                 <tr key={i} className="border border-gray-200 even:bg-blue-50">
-                                    <td className="p-4 font-semibold opacity-70 text-gray-600 w-[6rem] border-gray-200 border text-center">0{i + 1}</td>
-                                    <td className="p-4 font-semibold opacity-70 text-gray-600 w-[10rem] border-gray-200 border">{item.czMasterId}</td>
-                                    <td className="p-4 font-semibold opacity-70 text-gray-600 w-[12rem] border-gray-200 border">{item.hcpId}</td>
-                                    <td className="px-4 font-semibold opacity-70 text-gray-600 border-gray-200 border w-[12rem]">{item.itemCategory}</td>
-                                    <td className="p-4 font-semibold opacity-70 text-gray-600 border-gray-200 border w-[12rem]">{item.itemTitle}</td>
+                                    <td className="lg:p-4 p-2 font-semibold opacity-70 text-gray-600 w-[3rem] text-xs lg:text-sm lg:w-[6rem] border-gray-200 border text-center">0{i + 1}</td>
+                                    <td className="lg:p-4 p-2 font-semibold opacity-70 text-gray-600 w-[4rem] lg:w-[10rem] text-xs lg:text-sm  border-gray-200 border">{item.czMasterId}</td>
+                                    <td className="lg:p-4 p-2 font-semibold opacity-70 text-gray-600 w-[5rem] lg:w-[12rem] text-xs lg:text-sm  border-gray-200 border">{item.hcpId}</td>
+                                    <td className="lg:px-4 p-2 font-semibold opacity-70 text-gray-600 border-gray-200 border text-xs lg:text-sm lg:w-[12rem] w-[6rem]">{item.itemCategory}</td>
+                                    <td className="lg:p-4 p-2 font-semibold opacity-70 text-gray-600 border-gray-200 border text-xs lg:text-sm w-[6rem] lg:w-[12rem]">{item.itemTitle}</td>
                                     <td className="px-0 font-semibold opacity-70 text-gray-600 flex items-center justify-between">
-                                        <h4 className='border-gray-200 py-4 text-center border border-l-0 border-t-0 border-b-0 w-[50%]'>{item.rackRate}</h4>
-                                        <h4 className='w-[50%] py-4 text-center'>{item.offeredRate}</h4>
+                                        <h4 className='border-gray-200 text-xs lg:text-[1rem] py-4 text-center border border-l-0 border-t-0 border-b-0 w-[50%]'>{item.rackRate}</h4>
+                                        <h4 className='w-[50%] py-4 text-xs lg:text-[1rem] text-center'>{item.offeredRate}</h4>
                                     </td>
                                 </tr>
                             ))}
@@ -222,16 +225,16 @@ function MainSection() {
                 <div className='p-4 py-0 flex items-center justify-center'>
                     <table className="table w-[90%] border border-gray-200">
                         <thead>
-                            <tr className='border  bg-[#525659] text-white'>
-                                <th className='border border-gray-200 py-3'>Document Type</th>
-                                <th className='border border-gray-200 py-3'>Document Description</th>
-                                <th className='border border-gray-200 py-3'></th>
-                                <th className='border border-gray-200 py-3'>Remarks</th>
+                            <tr className='border bg-[#525659] text-white'>
+                                <th className='border text-xs lg:text-[1rem] border-gray-200 py-3'>Document Type</th>
+                                <th className='border text-xs lg:text-[1rem] border-gray-200 py-3'>Document Description</th>
+                                <th className='border text-xs lg:text-[1rem] w-[4rem] border-gray-200 py-3'></th>
+                                <th className='border text-xs lg:text-[1rem] border-gray-200 py-3'>Remarks</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className='border border-gray-200 py-1 text-center text-gray-800 font-[500] opacity-60'>proof of rack rate</td>
+                                <td className='border text-xs px-1 lg:px-0 lg:text-[1rem] border-gray-200 py-1 text-center text-gray-800 font-[500] opacity-60'>proof of rack rate</td>
                                 <td className='border border-gray-200 py-1'></td>
                                 <td className='border border-gray-200 py-1'>
                                     <img src={save} alt="" />
@@ -434,25 +437,25 @@ function MainSection() {
 
 
                 <div className='px-4 py-4 flex flex-col gap-2 boxShadowOne'>
-                    <p className='text-lg font-bold opacity-60 px-1'>Enter Your Remarks:</p>
+                    <p className='text-sm lg:text-lg font-bold opacity-60 px-1'>Enter Your Remarks:</p>
                     <div className='flex items-center justify-between'>
                         <textarea
                             type="text"
                             value={inputValue}
                             onChange={(e) => handleInput(e)}
                             placeholder='Enter your remarks here'
-                            className='px-2 py-1 text-lg outline-none font-semibold border border-gray-400 rounded-lg h-16 w-[40%]'
+                            className='px-2 py-1 text-sm lg:text-lg outline-none font-semibold border border-gray-400 rounded-lg h-16 w-[65%] lg:w-[40%]'
                         />
 
 
-                        <div className='flex gap-2 mr-16'>
+                        <div className='flex gap-2 mr-0 lg:mr-16'>
                             <Button
                                 variant="contained"
                                 color="success"
                                 sx={{
-                                    width: '12rem',
                                     fontWeight: "600",
                                 }}
+                                className='w-[5rem] lg:w-[12rem] lg:text-[1rem] text-sm'
                                 onClick={handleAddRemark}
                             >
                                 SEND

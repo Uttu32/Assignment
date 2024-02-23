@@ -7,7 +7,7 @@ export const AdvanceTariffData = [
   "Investigation",
   "Procedure",
   "Package",
-  "Home Care",
+  "HomeCare",
 ];
 
 export const tableData = [
