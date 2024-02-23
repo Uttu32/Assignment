@@ -259,19 +259,19 @@ function MainSection() {
                                                     onMouseLeave={() => handleHover(item.id)}
                                                 >
                                                     <div className='flex justify-between items-center'>
-                                                        <h1 className='flex items-center gap-1 text-lg font-bold text-gray-700'>
+                                                        <h1 className='flex items-center gap-1 text-xs lg:text-lg font-bold text-gray-700'>
                                                             {item.name}'s Reamarks:
-                                                            <img src={greentick} alt="" />
+                                                            <img className='w-4 h-4 lg:w-8 lg:h-8' src={greentick} alt="" />
                                                         </h1>
-                                                        <h3 className='font-[500] opacity-55 text-sm'>
+                                                        <h3 className='font-[500] opacity-55 text-xs sm:text-sm'>
                                                             {item.date}
                                                         </h3>
                                                     </div>
-                                                    <p className='font-[500] text-gray-600 pr-1'>
+                                                    <p className='font-[500] text-xs lg:text-[1rem] text-gray-600 pr-1'>
                                                         {item.msg}
                                                     </p>
                                                     {
-                                                        item.isEditEnable && <div className='flex flex-col absolute right-6 top-0 gap-3'>
+                                                        item.isEditEnable && <div className='flex flex-col absolute lg:right-6 -right-3 top-0 gap-3'>
                                                             <button
                                                                 className='shadow-3xl'
                                                                 onClick={() => handleOpen(item.id)}
@@ -304,14 +304,15 @@ function MainSection() {
                                                 padding: 4,
                                                 display: 'flex',
                                                 flexDirection: 'column',
-                                                gap: '2rem'
+                                                gap: '2rem',
+                                                border: 'none'
                                             }}
                                         >
-                                            <h2 className='font-bold text-2xl' id="parent-modal-title">Update Your Remark </h2>
+                                            <h2 className='font-bold text-sm lg:text-2xl' id="parent-modal-title">Update Your Remark </h2>
                                             {
                                                 currentData &&
                                                 <textarea
-                                                    className='border border-gray-400 outline-none p-2'
+                                                    className='border text-xs lg:text-lg h-48 border-gray-400 outline-none p-2'
                                                     value={currentData.msg}
                                                     onChange={(e) => handleRemarkChange(e)}
                                                 >
@@ -322,9 +323,10 @@ function MainSection() {
                                                 variant="contained"
                                                 color="success"
                                                 sx={{
-                                                    width: '12rem',
+                                                    // width: '12rem',
                                                     fontWeight: "600"
                                                 }}
+                                                className=' lg:w-[12rem]'
                                                 onClick={() => handleUpdate()}
                                             >
                                                 UPDATE
@@ -346,13 +348,13 @@ function MainSection() {
                                         className="flex w-[90%] gap-2 flex-col pb-4 px-2  cursor-pointer"
                                     >
                                         <div className='flex justify-between items-center'>
-                                            <h1 className='flex items-center gap-1 text-lg font-bold text-gray-700'>
+                                            <h1 className='flex items-center gap-1 text-xs sm:text-sm lg:text-lg font-bold text-gray-700'>
                                                 {RemarkData[0]?.name}'s Reamarks:
-                                                <img src={greentick} alt="" />
+                                                <img className='w-4 h-4 lg:w-8 lg:h-8' src={greentick} alt="" />
                                             </h1>
-                                            <h3 className='font-[500] opacity-55 text-sm'>{RemarkData[0]?.date}</h3>
+                                            <h3 className='font-[500] opacity-55 text-xs sm:text-sm'>{RemarkData[0]?.date}</h3>
                                         </div>
-                                        <p className='font-[500] text-gray-600 pr-1'>{RemarkData[0]?.msg}</p>
+                                        <p className='font-[500] text-xs lg:text-[1rem] text-gray-600 pr-1'>{RemarkData[0]?.msg}</p>
                                     </div>
                                     :
                                     null
@@ -361,7 +363,7 @@ function MainSection() {
 
                             {
                                 ishovered &&
-                                <div className='flex flex-col absolute right-8 top-3 gap-3'>
+                                <div className='flex flex-col absolute right-2 lg:right-8 top-3 gap-3'>
                                     <button
                                         onClick={() => handleOpen(RemarkData[0]?.id)}
                                         className='shadow-3xl'>
@@ -388,14 +390,15 @@ function MainSection() {
                                         padding: 4,
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        gap: '2rem'
+                                        gap: '2rem',
+                                        border: 'none'
                                     }}
                                 >
-                                    <h2 className='font-bold text-2xl' id="parent-modal-title">Update Your Remark </h2>
+                                    <h2 className='font-bold text-sm lg:text-2xl' id="parent-modal-title">Update Your Remark </h2>
                                     {
                                         currentData &&
                                         <textarea
-                                            className='border border-gray-400 outline-none p-2'
+                                            className='border text-xs lg:text-lg h-48 border-gray-400 outline-none p-2'
                                             value={currentData.msg}
                                             onChange={(e) => handleRemarkChange(e)}
                                         >
@@ -406,9 +409,10 @@ function MainSection() {
                                         variant="contained"
                                         color="success"
                                         sx={{
-                                            width: '12rem',
+                                            // width: '12rem',
                                             fontWeight: "600"
                                         }}
+                                        className=' lg:w-[12rem]'
                                         onClick={() => handleUpdate()}
                                     >
                                         UPDATE
@@ -426,7 +430,7 @@ function MainSection() {
                     RemarkData.length > 0 ?
                         <div className='self-center w-[90%] flex justify-end'>
                             <button
-                                className='text-sm text-[1rem] text-blue-600 self-end pr-1 font-bold active:text-blue-800 '
+                                className='text-xs lg:text-sm text-[1rem] text-blue-600 self-end pr-1 font-bold active:text-blue-800 '
                                 onClick={() => setIsAllRemarkvisible(!isAllRemarkVisible)}
                             >
                                 {isAllRemarkVisible ? "VIEW LESS REMARK" : "VIEW ALL REMARKS"}
