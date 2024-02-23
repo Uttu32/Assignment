@@ -31,7 +31,7 @@ function TopCard() {
 
             <section className='p-4 lg:p-7 pb-0 flex justify-between items-center gap-4 lg:gap-0'>
                 <h1 className='font-bold text-xs lg:text-lg text-gray-600'>Empanelment Case Requests</h1>
-                <p className="italic text-xs lg:text-md font-bold text-blue-600">View Assigned Grade</p>
+                <p className="italic text-xs lg:text-[1rem] font-bold text-blue-600">View Assigned Grade</p>
             </section>
 
 

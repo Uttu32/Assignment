@@ -25,7 +25,7 @@ const style = {
     pb: 3,
 };
 
-function MainSection() {
+function MainSection({ isExpanded }) {
     const [selected, setSelected] = useState("Consultation");
     const [ishovered, setIsHovered] = useState(false)
     const [inputValue, setInputValue] = useState("");
@@ -85,6 +85,10 @@ function MainSection() {
     }
 
     const handleUpdate = () => {
+        if (currentData.msg.trim() === "") {
+            alert("Please write something");
+            return;
+        }
         let id = currentData.id;
         const allData = [...RemarkData];
         let index = allData.findIndex((ele) => ele.id === id);
@@ -169,8 +173,8 @@ function MainSection() {
                 </div>
 
                 {/* Main Table  */}
-                <div className='p-4 py-0 overflow-x-scroll'>
-                    <table className="table w-[75.5rem]">
+                <div className='p-4 py-0 overflow-x-scroll '>
+                    <table className={"table " + (isExpanded ? "w-full lg:w-[75.5rem]" : " lg:w-[100%]")}>
                         <thead >
                             <tr>
                                 <th className="lg:p-4 p-1 lg:px-1 pb-0 w-fit border sm:space-y-2 bg-[#525659] border-white text-white">
@@ -260,7 +264,7 @@ function MainSection() {
                                                 >
                                                     <div className='flex justify-between items-center'>
                                                         <h1 className='flex items-center gap-1 text-xs lg:text-lg font-bold text-gray-700'>
-                                                            {item.name}'s Reamarks:
+                                                            {item.name}'s Remarks:
                                                             <img className='w-4 h-4 lg:w-8 lg:h-8' src={greentick} alt="" />
                                                         </h1>
                                                         <h3 className='font-[500] opacity-55 text-xs sm:text-sm'>
@@ -349,7 +353,7 @@ function MainSection() {
                                     >
                                         <div className='flex justify-between items-center'>
                                             <h1 className='flex items-center gap-1 text-xs sm:text-sm lg:text-lg font-bold text-gray-700'>
-                                                {RemarkData[0]?.name}'s Reamarks:
+                                                {RemarkData[0]?.name}'s Remarks:
                                                 <img className='w-4 h-4 lg:w-8 lg:h-8' src={greentick} alt="" />
                                             </h1>
                                             <h3 className='font-[500] opacity-55 text-xs sm:text-sm'>{RemarkData[0]?.date}</h3>
